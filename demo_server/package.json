@@ -1,0 +1,16 @@
+{
+  "name": "demo_server",
+  "version": "1.0.0",
+  "description": "Prueba servidor Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Alejandro",
+  "license": "ISC",
+  "dependencies": {
+    "cowsay": "^1.5.0"
+  },
+  "devDependencies": {}
+}
