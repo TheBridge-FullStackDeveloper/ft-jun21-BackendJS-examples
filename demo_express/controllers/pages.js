@@ -1,3 +1,4 @@
+const product = require('../utils/product')
 
 const pages = {
   home: (req, res) => {
@@ -23,16 +24,24 @@ const pages = {
     let id = req.params.id
     res.status(200).render("pictures",{msj,id});
   }, 
-  products: (req, res) => {
-    // podría
-    // hacer 
-    //fetch aquí
-    // ...
-    // ...
+  products: async (req, res) => {
+    
+    // Fetch de productos
+    let products;
+    req.params.id?
+        products = await product.getProductById(req.params.id): 
+        products = await product.getAllProducts() // array objetos
 
+    res.status(200).render("products",{products});
+  },
+  createProduct: async (req,res) => {
 
+    console.log("*******************");
+    let prod = req.body // producto a guardar
+    const response = await product.addProduct(prod)
+    console.log(response);
 
-    res.status(200).send("Esto es products");
+    res.status(201).json(response)
   }
 };
 
