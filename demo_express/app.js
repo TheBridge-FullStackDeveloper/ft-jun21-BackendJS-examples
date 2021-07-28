@@ -1,5 +1,6 @@
 const express = require('express')
 const pages = require('./routes/pages')
+const products = require('./routes/products')
 
 const app = express()
 const port = 3000
@@ -24,10 +25,12 @@ app.set('views','./views');
 // Middlewares
 // app.use(hasApiKey) // Para comprobar Api Key
 app.use(express.json()); // para convertir a JSON
-app.use('/',pages); // para el router
+// Rutas
+// http://localhost:3000/about --> WEB --> vista
+// http://localhost:3000/api/products --> API --> objeto
+app.use('/',pages); // para las vistas de la WEB
+app.use('/api',products) // para la API
 
-//app.use('/api',pages)
-//app.use('/otracosa',pages)
 
 app.get('*', (req, res) => {
     res.status(404).send("Sorry...404 Not found");
