@@ -1,0 +1,12 @@
+{
+    "source": {
+        "includePattern": ".+\\.js(doc|x)?$",   // El tipo de archivo que procesará al ejecutarse
+        "include": ["."],                       // Chequear todos los archivos
+        "exclude": ["node_modules"]             // Excluimos la carpeta node.modules.
+    },
+    "recurseDepth": 10,                         // Ves 10 niveles para abajo.
+    "opts": {
+        "destination": "./jsondocs/",           // La carpeta donde quiero que se generen mis htmls.
+        "recurse": true                         // Como usar el comando -r
+ }
+}

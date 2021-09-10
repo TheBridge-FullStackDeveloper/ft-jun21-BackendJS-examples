@@ -11,6 +11,21 @@ const port = 3000
 
 
 // http://localhost:3000/products?key=123hola
+
+
+
+    /**
+  * Función hasApiKey
+  * @author Alejandro Reyes <alejandroreyespage.com> 
+  * @method hasApiKey
+  * @param {Object} req - Solicitud http 
+  * @param {Object} res - Respuesta http 
+  * @param {Object} next - next() para seguir el middleware
+  * @throws {error} - Error 403. No se pudo autenticar 
+  */
+
+
+
 function hasApiKey (req,res,next){
   const API_KEY = req.query.key;
 

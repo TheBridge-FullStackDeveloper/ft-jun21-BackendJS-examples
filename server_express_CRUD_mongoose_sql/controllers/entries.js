@@ -1,6 +1,24 @@
 const Entry = require("../models/entries");
 
+/**
+ * Rutas a utilizar 
+ * @author Alejandro Reyes <alejandroreyespage.com> 
+ * @exports entries 
+ * @namespace entries 
+ */
+
+
 const entries = {
+    /**
+  * Función getEntries
+  * @memberof entries 
+  * @method getEntries 
+  * @async 
+  * @param {Object} req - Solicitud http 
+  * @param {Object} res - Respuesta http 
+  * @return {json} - Los datos de entrada la base de datos 
+  * @throws {error} - Cuando no se obtienen datos o hubo algún problema de conexión 
+  */
   getEntries: async (req, res) => {
     let entries;
     console.log(req.query.email)
